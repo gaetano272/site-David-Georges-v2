@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HYDRAUPRO - Votre expert en solutions hydrauliques et pneumatiques. Découvrez nos produits et services de qualité pour vos besoins industriels.">
+    <title>HYDRAUPRO — Assainissement, Eau potable & Irrigation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header class="site-header">
+  <nav class="nav container" id="primary-nav">
+    <a class="brand" href="index.html" aria-label="Hydraupro — Accueil">
+      <img src="images/HYDRAUPRO 1.png" class="logo" alt="Hydraupro">
+      <span>HYDRAUPRO</span>
+    </a>
+
+    <!-- Bouton hamburger (mobile) -->
+    <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">☰</button>
+
+      <!-- Solutions avec sous-menu -->
+    <ul id="menu" class="menu">
+      <li class="has-sub">
+        <button class="link-sub" aria-expanded="false" aria-controls="submenu-solutions">
+          Solutions ▾
+        </button>
+        <ul class="submenu" id="submenu-solutions">
+          <li><a href="assainissement.html">Assainissement</a></li>
+          <li><a href="distribution.html">Distribution d’eau potable</a></li>
+          <li><a href="irrigation.html">Irrigation</a></li>
+        </ul>
+      </li>
+      <li><a href="#atouts">Atouts</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#process">Méthode</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a class="cta" href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<!-- HERO -->
+<section class="hero">
+<div class="container hero-inner">
+
+<h1>Hydraupro – L’eau, la vie, l’avenir</h1>
+<p>Des solutions pour l’eau au Sénégal</p>
+</div>
+</div>
+</section>
+
+<!-- Section Contact -->
+    <section id="contact">
+        <h1 class="title">Contact</h1>
+        <form action="">
+            <div class="left-right">
+                <div class="left">
+                    <label>Nom Complet</label>
+                    <input type="text">
+                    <label>Objet</label>
+                    <input type="text">
+                    <label>Email</label>
+                    <input type="text">
+                    <label>Message</label>
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div class="right">
+                    <label>Numéro</label>
+                    <input type="text">
+                    <label>Date</label>
+                    <input type="text">
+                    <label>Autres Details</label>
+                    <input type="text">
+                    <label>Adresse</label>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13373.327238717836!2d-17.471666!3d14.728609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1694880000000" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <button>Envoyer</button>
+        </form>
+    </section>
+
+</main>
+<!-- Footer intégré -->
+<footer class="footer"><div class="container">© <span id="year"></span> HYDRAUPRO - Tous droits réservés. créé par Gaetan Legar</div></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+
+  <script>
+  // Burger mobile
+  const nav = document.getElementById('primary-nav');
+  const toggle = document.querySelector('.nav-toggle');
+  toggle?.addEventListener('click', ()=>{
+    nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', nav.classList.contains('open'));
+  });
+</script>
+
+
+</body>
+</html>

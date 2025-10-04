@@ -1,0 +1,459 @@
+/* =========================================================
+   HYDRAUPRO — CSS propre & unifié
+   Palette Sénégal modernisée + nav dropdown + footer sticky
+   ========================================================= */
+
+/* ---------- Variables ---------- */
+:root{
+  --vert:#108B4D;    /* Sénégal: vert */
+  --jaune:#F0C419;   /* Sénégal: jaune */
+  --rouge:#D12D2D;   /* Sénégal: rouge */
+  --noir:#0B1220;
+  --sable:#F8F3EC;
+  --blanc:#FFFFFF;
+  --deg-senegal: linear-gradient(135deg, #108B4D, #F0C419, #D12D2D);
+}
+
+/* ---------- Reset & base ---------- */
+*{ 
+  margin:0; 
+  padding:0; 
+  box-sizing:border-box; 
+}
+
+html, body{ 
+  height:100%; 
+}
+
+img{ 
+  max-width:100%; 
+  display:block; 
+}
+
+a{ 
+  text-decoration:none; 
+  color:inherit; 
+}
+
+body{
+  font-family: 'Poppins', Arial, sans-serif;
+  line-height:1.6;
+  color:#222;
+  background:#fff;
+
+  /* Footer sticky */
+  display:flex; flex-direction:column;
+}
+
+main{ 
+  flex:1; 
+} /* pousse le footer en bas */
+
+.container{ 
+  width:90%; 
+  max-width:1200px; 
+  margin:0 auto; 
+}
+
+/* ---------- Header & Navigation ---------- */
+.site-header{
+  position:absolute; 
+  top:0; 
+  left:0; 
+  width:100%;
+  padding:1.25rem 0;
+  z-index:1000;
+}
+
+.nav{ 
+  display:flex; 
+  justify-content:space-between; 
+  align-items:center; 
+  position:relative; 
+}
+.brand{ 
+  display:flex;
+  align-items:center; 
+  gap:1.5rem; 
+  color:#000000; 
+  font-weight:700; 
+  font-size:1.5rem; 
+}
+
+.logo{ 
+  height:50px; 
+  width:auto; 
+}
+
+.menu{ 
+  list-style:none; 
+  display:flex; 
+  gap:2rem; 
+  align-items:center; 
+}
+
+.menu a{ 
+  color:#FFFFFF; 
+  font-weight:600; 
+}
+
+.menu a:hover{ 
+  color: #000000;
+}
+
+/* Hamburger — visible uniquement en mobile */
+.nav-toggle{
+  display:none;
+  border:1px solid #ffffff33; 
+  background:transparent; 
+  color:#ffffff;
+  border-radius:.5rem; 
+  padding:.45rem .6rem; 
+  font-size:1.05rem; 
+  cursor:pointer;
+}
+
+/* Dropdown Solutions */
+.has-sub{ 
+  position:relative; 
+}
+
+.link-sub{
+  background:transparent; 
+  border:0; 
+  color:#000000; 
+  font-weight:800; 
+  cursor:pointer;
+  padding:.55rem .2rem; 
+  display:inline-flex; 
+  align-items:center; 
+  gap:.35rem;
+}
+
+/* Sous-menu (desktop) */
+.submenu{
+  position:absolute; 
+  top:calc(100% + .6rem); 
+  left:0; 
+  min-width:260px;
+  background:linear-gradient(135deg, #108B4D, #F0C419, #D12D2D); 
+  color:#F0C419;
+  border:1px solid #F0C419; 
+  border-radius:.6rem;
+  box-shadow:0 14px 30px rgba(0,0,0,.25);
+  padding:.4rem; z-index:1100;
+  opacity:0; 
+  visibility:hidden; 
+  transform:translateY(6px);
+  pointer-events:none;
+  transition:opacity .18s ease, transform .18s ease, visibility 0s linear .18s;
+}
+
+.submenu a{ 
+  display:block; 
+  padding:.6rem .75rem; 
+  border-radius:.4rem; 
+}
+
+.submenu a:hover{ 
+  background:#ffffff; 
+}
+
+/* Affichage au survol (desktop) & au clavier */
+.has-sub:hover > .submenu,
+.has-sub:focus-within > .submenu{
+  opacity:1; 
+  visibility:visible; 
+  transform:translateY(0);
+  pointer-events:auto; 
+  transition-delay:0s;
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  background: var(--deg-senegal);
+  color:#000000; /* lisible sur le dégradé */
+  text-align:center;
+  padding: 10rem 1rem 6rem; /* espace pour header absolu */
+  position:relative;
+}
+
+.hero h1{
+  font-size: clamp(2.2rem, 3.4vw, 3.6rem);
+  font-weight:800;
+  margin-bottom:.6rem;
+}
+
+.hero p{
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  margin-bottom:2.0rem;
+  color:#000000; /* texte blanc confirmé */
+}
+
+/* CTA */
+.cta-final{ 
+  display:flex; 
+  justify-content:center; 
+  gap:1rem; 
+  flex-wrap:wrap; 
+}
+
+.btn{
+  padding:.9rem 1.6rem; 
+  border-radius:999px; 
+  font-weight:700;
+  border:2px solid transparent; 
+  transition:.2s;
+}
+
+.btn.solid{ 
+  background:var(--jaune); 
+  color:#222; 
+  border-color:#00000026; 
+}
+
+.btn.solid:hover{ 
+  filter:brightness(1.05); 
+  transform:translateY(-2px); 
+}
+
+.btn.outline{ 
+  background:#0e7943; 
+  color:#fff; 
+  border-color:#0e7943; 
+}
+
+.btn.outline:hover{ 
+  background:#0c6a3b; 
+}
+
+/* ---------- Sections ---------- */
+.band{ 
+  padding: 4.5rem 0; 
+}
+
+.band.sable{ 
+  background:#111; 
+  color:#fff; 
+  text-align:center; 
+}
+
+.title{ 
+  font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.2rem); 
+}
+
+.band.sable .title{ 
+  color:var(--jaune);
+  margin-bottom:2.2rem; 
+}
+
+/* Cartes */
+.cards{
+  display:grid; 
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:1.6rem;
+}
+
+.card{
+  background:#fff; 
+  border-radius:1rem; 
+  padding:1.2rem 1.2rem 1.4rem;
+  text-align:center; 
+  box-shadow:0 10px 30px rgba(0,0,0,.10);
+  transition:.25s ease; 
+  display:flex; 
+  flex-direction:column; 
+  align-items:center;
+}
+
+.card:hover{ 
+  transform:translateY(-6px); 
+  
+box-shadow:0 16px 40px rgba(0,0,0,.14); 
+}
+
+/* Vignette couvrante & centrée */
+.card img{
+  width:100%; 
+  height:160px; 
+  object-fit:cover; 
+  object-position:center;
+  border-radius:.8rem; 
+  margin-bottom:.9rem;
+}
+
+/* Lien “Voir plus →” */
+.card .panel{
+  align-self:flex-end; 
+  margin:.2rem 0 .4rem; 
+  font-weight:700; 
+  font-size:.95rem;
+  color:#000000; 
+  text-decoration:none;
+}
+.card .panel:hover{ 
+  text-decoration:underline; 
+}
+
+.card h3{ 
+  font-size:1.1rem; 
+  color:#111; 
+  margin:.3rem 0 .2rem; 
+}
+
+.card p{ 
+  font-size:.97rem; 
+  color:#000000; 
+}
+
+/* ---------- Contact ---------- */
+#contact{ 
+  padding:0 10%; 
+  margin-bottom:50px; 
+}
+#contact form{
+  background:#fff; 
+  margin:auto; 
+  display:flex; 
+  flex-direction:column; 
+  padding:20px;
+}
+.left-right{ 
+  display:flex; 
+  justify-content:space-between; 
+  gap:2%; 
+  margin-bottom:20px; 
+}
+.left-right .left, .left-right .right{ 
+  width:49%; 
+  display:flex; 
+  flex-direction:column; 
+}
+
+#contact form label{ 
+  font-size:14px; 
+  padding:10px 0; 
+  font-weight:600; 
+}
+#contact form input, textarea{
+  padding:8px; 
+  outline:0; 
+  border:1px solid #000000;
+}
+textarea{ 
+  height:150px; 
+  resize:none; 
+  width:100%; 
+  padding:10px; 
+}
+
+#contact button{
+  width:fit-content; 
+  padding:8px 40px; 
+  background:linear-gradient(135deg, #108B4D, #F0C419, #D12D2D); 
+  border:1px solid #DDD;
+  color:#fff; 
+  cursor:pointer;
+  transition:.25s;
+}
+#contact button:hover{ 
+  letter-spacing:.5px; 
+}
+
+/* ---------- Footer (sticky) ---------- */
+.footer{
+  width:100%; 
+  background:#0b1220; 
+  color:#fff; 
+  text-align:center;
+  padding:1.5rem 1rem; 
+  font-size:1rem; 
+  letter-spacing:.3px;
+  margin-top:auto; 
+  border-top:3px solid var(--jaune);
+}
+.footer span{ 
+  color:var(--jaune); 
+  font-weight:900; 
+}
+
+/* ---------- Utilitaires ---------- */
+.cta-home{
+  background: var(--vert); 
+  color:#fff; 
+  font-weight:700;
+  padding:.55rem 1rem; 
+  border-radius:50px; 
+  display:inline-block; 
+  transition:.25s;
+}
+.cta-home:hover{ 
+  background:var(--jaune); 
+  color:#111; 
+  transform:translateY(-2px); 
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px){
+  .left-right{ flex-direction:column; }
+  .left-right .left, .left-right .right{ width:100%; }
+}
+
+@media (max-width: 860px){
+  /* Afficher le hamburger */
+  .nav-toggle{ display:inline-flex; align-items:center; justify-content:center; }
+
+  /* Menu mobile replié par défaut */
+  .menu{
+    width:100%; display:none; 
+    flex-direction:column; 
+    align-items:stretch;
+    gap:0; 
+    padding:.4rem 0; 
+    background:rgba(11,18,32,.92);
+    border:1px solid #ffffff1a;
+    border-radius:.8rem; 
+    margin-top:.6rem;
+  }
+  .open .menu{ display:flex; }
+
+  .menu > li{ 
+    padding:.2rem .6rem; 
+  }
+  .menu a, .link-sub{ 
+    width:100%; 
+    text-align:left; 
+    padding:.7rem .6rem; 
+  }
+
+  /* Sous-menu en mobile (accordéon) */
+  .submenu{
+    position:static; 
+    box-shadow:none; 
+    border:0; 
+    background:transparent;
+    padding:0; 
+    margin:.2rem 0 .4rem 0; 
+    transform:none;
+
+    /* visible seulement quand .has-sub.open */
+    display:none; 
+    opacity:1; 
+    visibility:visible; 
+    pointer-events:auto;
+  }
+  .has-sub.open > .submenu{ 
+    display:block; 
+  }
+  .submenu a{ 
+    padding:.55rem .8rem .55rem 1.6rem; 
+  }
+}
+
+@media (max-width: 600px){
+  .hero{ padding-top:8rem; }
+}
+
+/* Fin du fichier */
+
+
